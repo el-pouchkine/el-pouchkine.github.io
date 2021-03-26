@@ -1,63 +1,21 @@
 const nav = document.querySelector('nav')
 
-const code = document.querySelector('.code')
-
 
 
 // ****************************************************
 // **********************PROGRESS BAR*****************
 // ****************************************************
-const skills = {
-    html: 40,
-    css: 30,
-    sass: 20,
-    javascript: 5
+const progress = document.querySelectorAll('.progress')
+const test = document.querySelector('.test')
+
+for (const childElementCount of progress) {
+    console.log(childElementCount.id);
+    test.innerHtml = 'childElementCount.id'
 }
 
+console.log(progress);
 
 
-
-for (var skill in skills) {
-    const competences = [skill]
-
-    competences.forEach(skillCreation)
-
-   
-
-    function skillCreation() { 
-        const bar = document.createElement('div')
-        bar.id = competences
-        bar.className = 'skill'
-        bar.innerHTML = `<div class="bar"><div class="progress"></div></div>`
-        code.appendChild(bar)
-    }
-}
-
-const bars = document.querySelectorAll('.skill')
-console.log(bars);
-
-
-const progress = document.querySelector('.progress')
-
-skillLevel()
-
-function skillLevel(name, percent) {
-    name = skill
-    percent = skills[skill]
-
-    var id = setInterval(progressBar, 25)
-
-    function progressBar() {
-
-        if (width >= percent) {
-            clearInterval(id)
-        } else {
-            width++
-            progress.style.width = width + '%'
-            progress.innerHTML = name + ' ' + width + '%'
-        }
-    }
-}
 
 
 // ************************************************

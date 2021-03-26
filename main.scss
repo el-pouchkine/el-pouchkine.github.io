@@ -1,0 +1,269 @@
+// *******************************GENERAL******************************
+// *******************************NAVBAR*******************************
+// *******************************ACCEUIL******************************
+// *******************************COMPETENCES**************************
+// *******************************PORTFOLIO****************************
+// *******************************CONTACT******************************
+
+
+// *******************************GENERAL******************************
+*{
+    margin: 0;
+    padding: 0;
+   } 
+
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+
+
+
+// *************************NAVBAR*********************
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #333;
+    transition: .8s ease-in-out;
+    height: 5vh;
+    z-index: 1;
+    display: flex;
+
+    ul {
+        grid-area: gridNav;
+
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        list-style-type: none;
+        align-items: center;
+
+        li {
+            grid-column: auto;
+            text-decoration: none;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+
+            &:hover {
+                transition: ease-in-out .5s;
+                overflow: auto;
+                transform: translateZ(50px);
+            }
+
+            a {
+                color: white;
+                mix-blend-mode: difference;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    @media screen and (max-width: 720px) {
+        display: none;
+    }
+}
+
+
+
+
+
+// **********************************ACCEUIL****************************
+main {
+    height: 100%;
+    width: 100%;
+
+    .acceuil {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        // background: url(./medias/img/lac.jpg) fixed no-repeat center/cover;
+        // display: grid;
+
+
+        .acceuil-content {
+            max-height: 600px;
+            max-width: 1200px;
+            width: 80%;
+            padding: 5%;
+            display: grid;
+            gap: 5%;
+            grid-template-areas: 'gridPres gridIntro gridIntro';
+
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translateY(-50%) translateX(-50%);
+            // background: inherit;
+
+            // &:before {
+            //     content: '';
+            //     position: absolute;
+            //     top: 0;
+            //     left: 0;
+            //     right: 0;
+            //     bottom: 0;
+            //     box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+            //     filter: blur(5px) saturate(95%) ;
+            //     background: inherit;
+            // }
+
+
+
+            @media screen and (max-width: 720px) {
+                display: grid;
+                grid-template-areas: 'gridPres'
+                                     'gridIntro';
+                grid-gap: 5%;
+            }
+
+            .presentation {
+                grid-area: gridPres;
+
+                display: grid;
+                grid-template-areas: 'gridJesse'
+                    'gridInfos'
+                    'gridInfos';
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+
+                h1 {
+                    grid-area: gridJesse;
+
+                    position: relative;
+                    text-align: left;
+                }
+
+                .infos {
+                    grid-area: gridInfos;
+
+                    position: relative;
+                    display: flex;
+                    justify-content: space-between;
+                    flex-direction: column;
+                    text-align: left;
+
+                    ul {
+                        list-style-type: none;
+                    }
+                }
+
+            }
+
+
+            .intro {
+                grid-area: gridIntro;
+
+                display: grid;
+                text-align: justify;
+                padding: 20px;
+
+                p {
+                    grid-area: gridParagrapheIntro;
+                }
+            }
+        }
+    }
+
+
+
+
+    // ******************************************COMPETENCES***********************************
+
+    .competences {
+        position: relative;
+        top: 100%;
+        height: 100%;
+        width: 100%;
+
+        .competences-content {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            grid-area: gridCompetencesContent;
+
+            .code {
+                height: 100%;
+                width: 50%;
+                margin: 10vh;
+
+                .bar {
+                    width: 50%;
+                    border: black 1px solid;
+                    border-radius: 10px;
+
+                    .progress
+                    {
+                        height: 20px;
+                        border-radius: 10px;
+                        background: chocolate;
+                    }
+                }
+            }
+        }
+    }
+
+
+    // ***********************************PORTFOLIO*****************************
+    .portfolio {
+        position: relative;
+        top: 100%;
+        height: 100%;
+        width: 100%;
+        display: grid;
+
+        .portfolio-content {
+            grid-area: grid-portfolio;
+            padding: 5vh;
+            text-align: justify;
+        }
+    }
+
+
+
+    // ************************************CONTACT***********************
+
+
+    .contact {
+        position: relative;
+        top: 100%;
+        height: 100%;
+        width: 100%;
+        display: grid;
+
+        .contact-content {
+            grid-area: grid-contact;
+            padding: 5vh;
+            text-align: justify;
+        }
+    }
+}
+
+// .acceuil-bg {
+//     position: fixed;
+//     ;
+//     top: 0;
+//     height: 100%;
+//     width: 100%;
+//     background: url(./medias/img/lac.jpg) no-repeat 0px;
+//     overflow-x: visible;
+
+//     .acceuil-blur {
+//         position: absolute;
+//         height: 100%;
+//         width: 80%;
+//         max-width: 1200px;
+//         left: 50%;
+//         transform: translateX(-50%);
+
+
+//     }
+// }

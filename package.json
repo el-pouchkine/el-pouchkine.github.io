@@ -1,0 +1,15 @@
+{
+  "name": "cv_en_ligne",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "sass": "sass --watch ./main.scss:./style.css",
+    "sassmin": "--watch ./main.scss:./style.min.css --style compressed"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.32.8"
+  }
+}

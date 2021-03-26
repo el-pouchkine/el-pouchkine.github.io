@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #333;
+  transition: 0.8s ease-in-out;
+  height: 5vh;
+  z-index: 1;
+  display: flex;
+}
+.navbar ul {
+  grid-area: gridNav;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  list-style-type: none;
+  align-items: center;
+}
+.navbar ul li {
+  grid-column: auto;
+  text-decoration: none;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.navbar ul li:hover {
+  transition: ease-in-out 0.5s;
+  overflow: auto;
+  transform: translateZ(50px);
+}
+.navbar ul li a {
+  color: white;
+  mix-blend-mode: difference;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 720px) {
+  .navbar {
+    display: none;
+  }
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+main .acceuil {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+main .acceuil .acceuil-content {
+  max-height: 600px;
+  max-width: 1200px;
+  width: 80%;
+  padding: 5%;
+  display: grid;
+  gap: 5%;
+  grid-template-areas: "gridPres gridIntro gridIntro";
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+@media screen and (max-width: 720px) {
+  main .acceuil .acceuil-content {
+    display: grid;
+    grid-template-areas: "gridPres" "gridIntro";
+    grid-gap: 5%;
+  }
+}
+main .acceuil .acceuil-content .presentation {
+  grid-area: gridPres;
+  display: grid;
+  grid-template-areas: "gridJesse" "gridInfos" "gridInfos";
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+main .acceuil .acceuil-content .presentation h1 {
+  grid-area: gridJesse;
+  position: relative;
+  text-align: left;
+}
+main .acceuil .acceuil-content .presentation .infos {
+  grid-area: gridInfos;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: left;
+}
+main .acceuil .acceuil-content .presentation .infos ul {
+  list-style-type: none;
+}
+main .acceuil .acceuil-content .intro {
+  grid-area: gridIntro;
+  display: grid;
+  text-align: justify;
+  padding: 20px;
+}
+main .acceuil .acceuil-content .intro p {
+  grid-area: gridParagrapheIntro;
+}
+main .competences {
+  position: relative;
+  top: 100%;
+  height: 100%;
+  width: 100%;
+}
+main .competences .competences-content {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  grid-area: gridCompetencesContent;
+}
+main .competences .competences-content .code {
+  height: 100%;
+  width: 50%;
+  margin: 10vh;
+}
+main .competences .competences-content .code .bar {
+  width: 50%;
+  border: black 1px solid;
+  border-radius: 10px;
+}
+main .competences .competences-content .code .bar .progress {
+  height: 20px;
+  border-radius: 10px;
+  background: chocolate;
+}
+main .portfolio {
+  position: relative;
+  top: 100%;
+  height: 100%;
+  width: 100%;
+  display: grid;
+}
+main .portfolio .portfolio-content {
+  grid-area: grid-portfolio;
+  padding: 5vh;
+  text-align: justify;
+}
+main .contact {
+  position: relative;
+  top: 100%;
+  height: 100%;
+  width: 100%;
+  display: grid;
+}
+main .contact .contact-content {
+  grid-area: grid-contact;
+  padding: 5vh;
+  text-align: justify;
+}
+
+/*# sourceMappingURL=style.css.map */

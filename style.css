@@ -124,25 +124,25 @@ main .competences .competences-content {
   height: 100%;
   width: 100%;
   position: absolute;
-  grid-area: gridCompetencesContent;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
 }
-main .competences .competences-content .code {
-  height: 100%;
+main .competences .competences-content .languages, main .competences .competences-content .frameworks {
   width: 50%;
-  margin: 10vh;
 }
-main .competences .competences-content .code .bar {
+main .competences .competences-content .languages .bar, main .competences .competences-content .frameworks .bar {
   width: 50%;
   border: black 1px solid;
   border-radius: 10px;
 }
-main .competences .competences-content .code .bar .progressBar {
+main .competences .competences-content .languages .bar .progressBar, main .competences .competences-content .frameworks .bar .progressBar {
   width: 0;
   height: 20px;
   border-radius: 10px;
   background: chocolate;
 }
-main .competences .competences-content .code .bar p {
+main .competences .competences-content .languages .bar p, main .competences .competences-content .frameworks .bar p {
   position: relative;
 }
 main .portfolio {

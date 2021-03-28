@@ -16,7 +16,9 @@ const skills = document.querySelectorAll('.skill')
 // });
 
 skills.forEach (skill => {
-    let progress = skill.attributes.value.value
+
+
+    const progress = skill.attributes.value.value
     let skillName = skill.id
     let bar = document.createElement('div')
     let progressBar = document.createElement('div')
@@ -31,12 +33,21 @@ skills.forEach (skill => {
     skill.appendChild(bar)
     textContainer.appendChild(textBar)
     bar.appendChild(progressBar)
-    
-    progressBar.style.width = progress + '%'
 
+    let barWidth = 0
+    let createBar = setInterval(progression, 20)
 
-    console.log(skillName);
-    console.log(progress);
+    function progression(){
+        
+        barWidth++
+
+        if (barWidth >= progress){
+            clearInterval(createBar)
+        }else{
+            progressBar.style.width = barWidth + '%'
+        }
+    }
+
 })
 
 

@@ -188,12 +188,13 @@ main {
             height: 100%;
             width: 100%;
             position: absolute;
-            grid-area: gridCompetencesContent;
 
-            .languages {
-                height: 100%;
+            display: flex;
+            flex-direction: column;
+            top: 50%;
+
+            .languages, .frameworks {
                 width: 50%;
-                margin: 10vh;
 
                 .bar {
                     width: 50%;

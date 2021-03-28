@@ -190,7 +190,7 @@ main {
             position: absolute;
             grid-area: gridCompetencesContent;
 
-            .code {
+            .languages {
                 height: 100%;
                 width: 50%;
                 margin: 10vh;
@@ -200,11 +200,15 @@ main {
                     border: black 1px solid;
                     border-radius: 10px;
 
-                    .progress
-                    {
+                    .progressBar {
+                        width: 0;
                         height: 20px;
                         border-radius: 10px;
                         background: chocolate;
+                    }
+
+                    p {
+                        position: relative;
                     }
                 }
             }

@@ -136,10 +136,14 @@ main .competences .competences-content .code .bar {
   border: black 1px solid;
   border-radius: 10px;
 }
-main .competences .competences-content .code .bar .progress {
+main .competences .competences-content .code .bar .progressBar {
+  width: 0;
   height: 20px;
   border-radius: 10px;
   background: chocolate;
+}
+main .competences .competences-content .code .bar p {
+  position: relative;
 }
 main .portfolio {
   position: relative;

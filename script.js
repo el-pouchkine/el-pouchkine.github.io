@@ -1,19 +1,44 @@
-const nav = document.querySelector('nav')
-
-
-
 // ****************************************************
 // **********************PROGRESS BAR*****************
 // ****************************************************
-const progress = document.querySelectorAll('.progress')
-const test = document.querySelector('.test')
+const skills = document.querySelectorAll('.skill')
 
-for (const childElementCount of progress) {
-    console.log(childElementCount.id);
-    test.innerHtml = 'childElementCount.id'
-}
+// skills.forEach(skill => {
+//     const bar = skill.querySelector('.progress')
+//     const skillName = bar.id
+//     const progress = bar.attributes.value.value
 
-console.log(progress);
+//     bar.style.width = progress + '%'
+//     bar.innerHTML = skillName
+
+//     console.log(progress);
+//     console.log(skillName);
+// });
+
+skills.forEach (skill => {
+    let progress = skill.attributes.value.value
+    let skillName = skill.id
+    let bar = document.createElement('div')
+    let progressBar = document.createElement('div')
+    let textContainer = document.createElement('p')
+    let textBar = document.createTextNode(skillName)
+
+    bar.className = 'bar'
+    progressBar.className = 'progressBar'
+    progressBar.id = skillName
+    
+    skill.appendChild(textContainer)
+    skill.appendChild(bar)
+    textContainer.appendChild(textBar)
+    bar.appendChild(progressBar)
+    
+    progressBar.style.width = progress + '%'
+
+
+    console.log(skillName);
+    console.log(progress);
+})
+
 
 
 
@@ -21,33 +46,39 @@ console.log(progress);
 // ************************************************
 // ********************HIDENAV********************
 // ************************************************
+const nav = document.querySelector('nav')
 
 var width = 1
 
-// CHECK MOZILLA EVENT LISTENER FOR HIDE NAV
+// CHECK MOZILLA EVENT LISTENER
 if (window.addEventListener)
     window.addEventListener('DOMMouseScroll', hideNav)
 
-// OTHERS EVENTS LISTENERS FOR HIDE NAV
+// OTHERS EVENTS LISTENERS
 window.onmousewheel = hideNav
 
 
 function hideNav(event) {
-
     let delta = 0
     let ctrl = event.ctrlKey
+    let alt = event.altKey
 
-    if (!event) event = window.event
+    if (ctrl == false && alt == false) {
 
-    if (event.wheelDelta) {
-        delta = event.wheelDelta / 60
-    } else if (event.detail) {
-        delta = -event.detail / 2 /*MOZILLA*/
+
+        if (!event) event = window.event
+
+        if (event.wheelDelta) {
+            delta = event.wheelDelta / 60
+        } else if (event.detail) {
+            delta = -event.detail / 2 /*MOZILLA*/
+        }
+
+        if (delta < 0) {
+            nav.style.top = "-5vh"
+        } else {
+            nav.style.top = "0"
+        }
     }
 
-    if (delta < 0 && ctrl == false) {
-        nav.style.top = "-5vh"
-    } else {
-        nav.style.top = "0"
-    }
 }

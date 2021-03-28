@@ -75,10 +75,6 @@ function hideNav(event) {
     let alt = event.altKey
 
     if (ctrl == false && alt == false) {
-
-
-        if (!event) event = window.event
-
         if (event.wheelDelta) {
             delta = event.wheelDelta / 60
         } else if (event.detail) {

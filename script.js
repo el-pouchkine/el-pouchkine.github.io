@@ -86,6 +86,7 @@ function hideNav(event) {
         } else {
             nav.style.top = "0"
         }
+        
     }
 
 }

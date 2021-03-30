@@ -1,59 +1,3 @@
-// ****************************************************
-// **********************PROGRESS BAR*****************
-// ****************************************************
-const skills = document.querySelectorAll('.skill')
-
-// skills.forEach(skill => {
-//     const bar = skill.querySelector('.progress')
-//     const skillName = bar.id
-//     const progress = bar.attributes.value.value
-
-//     bar.style.width = progress + '%'
-//     bar.innerHTML = skillName
-
-//     console.log(progress);
-//     console.log(skillName);
-// });
-
-skills.forEach (skill => {
-
-
-    const progress = skill.attributes.value.value
-    let skillName = skill.id
-    let bar = document.createElement('div')
-    let progressBar = document.createElement('div')
-    let textContainer = document.createElement('p')
-    let textBar = document.createTextNode(skillName)
-
-    bar.className = 'bar'
-    progressBar.className = 'progressBar'
-    progressBar.id = skillName
-    
-    skill.appendChild(textContainer)
-    skill.appendChild(bar)
-    textContainer.appendChild(textBar)
-    bar.appendChild(progressBar)
-
-    let barWidth = 0
-    let createBar = setInterval(progression, 20)
-
-    function progression(){
-        
-        barWidth++
-
-        if (barWidth >= progress){
-            clearInterval(createBar)
-        }else{
-            progressBar.style.width = barWidth + '%'
-        }
-    }
-
-})
-
-
-
-
-
 // ************************************************
 // ********************HIDENAV********************
 // ************************************************
@@ -86,7 +30,154 @@ function hideNav(event) {
         } else {
             nav.style.top = "0"
         }
-        
+
     }
 
+}
+
+
+
+
+// ****************************************************
+// **********************PROGRESS BAR*****************
+// ****************************************************
+const skills = document.querySelectorAll('.skill')
+
+skills.forEach(skill => {
+
+
+    const progress = skill.attributes.value.value
+    let skillName = skill.id
+    let bar = document.createElement('div')
+    let progressBar = document.createElement('div')
+    let textContainer = document.createElement('p')
+    let textBar = document.createTextNode(skillName)
+
+    bar.className = 'bar'
+    progressBar.className = 'progressBar'
+    progressBar.id = skillName
+
+    skill.appendChild(textContainer)
+    skill.appendChild(bar)
+    textContainer.appendChild(textBar)
+    bar.appendChild(progressBar)
+
+    let barWidth = 0
+    let createBar = setInterval(progression, 20)
+
+    function progression() {
+
+        barWidth++
+
+        if (barWidth >= progress) {
+            clearInterval(createBar)
+        } else {
+            progressBar.style.width = barWidth + '%'
+        }
+    }
+
+})
+
+
+
+
+// ********************************************************************
+// **************************GOLDEN RATIO****************************
+// *********************************************************************
+fibonacci()
+
+setInterval(fibonacci, 5000)
+
+function fibonacci() {
+    const base = document.querySelector('.base')
+
+      while (base.firstChild) {
+            base.removeChild(base.firstChild);
+        }
+    
+    var cycle = 0
+
+    function createCarreV(parent) {
+        let carreV = document.createElement('div')
+        carreV.className = 'carreV fibo'
+        carreV.style.width = '100%'
+        carreV.style.height = 100 * 0.618 + '%'
+        carreV.style.background = 'rgb(' + (Math.floor(Math.random() * 255)) + ', ' + (Math.floor(Math.random() * 255)) + ', ' + (Math.floor(Math.random() * 255)) + ')'
+        carreV.style.content = ''
+        parent.appendChild(carreV)
+    }
+
+    function createRectangleH(parent) {
+        let rectangleH = document.createElement('div')
+        rectangleH.className = 'rectangleH fibo'
+        rectangleH.style.width = '100%'
+        rectangleH.style.height = 100 - (100 * 0.618) + '%'
+        rectangleH.style.background = 'rgb(' + (Math.floor(Math.random() * 255)) + ', ' + (Math.floor(Math.random() * 255)) + ', ' + (Math.floor(Math.random() * 255)) + ')'
+        rectangleH.style.content = ''
+        rectangleH.style.display = 'flex'
+        rectangleH.style.flexDirection = "row"
+
+        parent.appendChild(rectangleH)
+    }
+
+    function createRectangleV(parent) {
+        let rectangleV = document.createElement('div')
+        rectangleV.className = 'rectangleV fibo'
+        rectangleV.style.width = 100 - (100 * 0.618) + '%'
+        rectangleV.style.height = '100%'
+        rectangleV.style.background = 'rgb(' + (Math.floor(Math.random() * 255)) + ', ' + (Math.floor(Math.random() * 255)) + ', ' + (Math.floor(Math.random() * 255)) + ')'
+        rectangleV.style.content = ''
+        parent.appendChild(rectangleV)
+        rectangleV.style.display = 'flex'
+        rectangleV.style.flexDirection = "column"
+    }
+
+    function createCarreH(parent) {
+        let carreH = document.createElement('div')
+        carreH.className = 'carreH fibo'
+        carreH.style.width = 100 * 0.618 + '%'
+        carreH.style.height = '100%'
+        carreH.style.background = 'rgb(' + (Math.floor(Math.random() * 255)) + ', ' + (Math.floor(Math.random() * 255)) + ', ' + (Math.floor(Math.random() * 255)) + ')'
+        carreH.style.content = ''
+        parent.appendChild(carreH)
+    }
+
+    createCarreH(base)
+    createRectangleV(base)
+
+
+    while (cycle <2) {
+        cycle++
+
+        let rectangleVertical = document.querySelectorAll('.rectangleV')
+        let rectangleV = rectangleVertical[rectangleVertical.length - 1]
+
+        createRectangleH(rectangleV)
+        createCarreV(rectangleV)
+
+
+        let rectangleHorizontal = document.querySelectorAll('.rectangleH')
+        let rectangleH = rectangleHorizontal[rectangleHorizontal.length - 1]
+
+        createRectangleV(rectangleH)
+        createCarreH(rectangleH)
+
+
+        rectangleVertical = document.querySelectorAll('.rectangleV')
+        rectangleV = rectangleVertical[rectangleVertical.length - 1]
+
+
+        createCarreV(rectangleV)
+        createRectangleH(rectangleV)
+
+        rectangleHorizontal = document.querySelectorAll('.rectangleH')
+        rectangleH = rectangleHorizontal[rectangleHorizontal.length - 1]
+
+        createCarreH(rectangleH)
+        createRectangleV(rectangleH)
+
+        console.log(rectangleH);
+        console.log(rectangleV);
+
+    }
 }

@@ -57,19 +57,19 @@ main {
   width: 100%;
 }
 main .acceuil {
-  position: relative;
+  position: absolute;
   height: 100%;
   width: 100%;
 }
 main .acceuil .acceuil-content {
+  background: url(./medias/img/geometricArt.jpg) no-repeat fixed center/cover;
   max-height: 600px;
   max-width: 1200px;
   width: 80%;
-  padding: 5%;
   display: grid;
   gap: 5%;
   grid-template-areas: "gridPres gridIntro gridIntro";
-  position: relative;
+  position: absolute;
   left: 50%;
   top: 50%;
   transform: translateY(-50%) translateX(-50%);
@@ -83,6 +83,9 @@ main .acceuil .acceuil-content {
 }
 main .acceuil .acceuil-content .presentation {
   grid-area: gridPres;
+  padding: 30% 20% 30% 30%;
+  width: 100%;
+  margin: 0 0 0 0;
   display: grid;
   grid-template-areas: "gridJesse" "gridInfos" "gridInfos";
   position: relative;
@@ -109,7 +112,9 @@ main .acceuil .acceuil-content .intro {
   grid-area: gridIntro;
   display: grid;
   text-align: justify;
-  padding: 20px;
+  padding: 5% 5% 5% 10%;
+  color: white;
+  mix-blend-mode: difference;
 }
 main .acceuil .acceuil-content .intro p {
   grid-area: gridParagrapheIntro;
@@ -147,26 +152,31 @@ main .competences .competences-content .frameworks {
   position: relative;
   display: grid;
   align-items: center;
+  gap: 2vh;
 }
 main .competences .competences-content .languages .skill,
 main .competences .competences-content .frameworks .skill {
+  padding: 0 2vh 0 2vh;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 20% auto;
+  text-align: left;
+}
+main .competences .competences-content .languages .skill p::first-letter,
+main .competences .competences-content .frameworks .skill p::first-letter {
+  text-transform: uppercase;
 }
 main .competences .competences-content .languages .skill .bar,
 main .competences .competences-content .frameworks .skill .bar {
-  width: 50%;
+  position: relative;
+  top: 25%;
+  left: 0;
 }
 main .competences .competences-content .languages .skill .bar .progressBar,
 main .competences .competences-content .frameworks .skill .bar .progressBar {
+  background: chocolate;
+  height: 0.5vh;
   width: 0;
-  border: chocolate 2px solid;
-}
-main .competences .competences-content .languages .skill .bar p,
-main .competences .competences-content .frameworks .skill .bar p {
-  position: relative;
 }
 main .competences .autres {
   grid-area: autresArea;
@@ -178,7 +188,7 @@ main .competences .autres {
   max-width: 1200px;
   text-align: justify;
   display: grid;
-  z-index: 1;
+  z-index: 20;
   color: white;
   mix-blend-mode: difference;
 }
@@ -219,6 +229,35 @@ main .contact .contact-content {
   grid-area: grid-contact;
   padding: 5vh;
   text-align: justify;
+}
+
+#golden-ratio {
+  content: "";
+  height: 100%;
+  width: 100%;
+  z-index: 20;
+}
+#golden-ratio .base {
+  position: relative;
+  top: 6vh;
+  left: 50%;
+  transform: translateX(-50%);
+  content: "";
+  height: 85vh;
+  width: calc(85vh * 1.618);
+  display: flex;
+}
+#golden-ratio .carreV {
+  transition: ease-in-out 1s;
+}
+#golden-ratio .rectangleV {
+  transition: ease-in-out 2s;
+}
+#golden-ratio .carreH {
+  transition: ease 1s;
+}
+#golden-ratio .rectangleH {
+  transition: ease 1s;
 }
 
 /*# sourceMappingURL=style.css.map */

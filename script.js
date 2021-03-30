@@ -175,9 +175,5 @@ function fibonacci() {
 
         createCarreH(rectangleH)
         createRectangleV(rectangleH)
-
-        console.log(rectangleH);
-        console.log(rectangleV);
-
     }
 }

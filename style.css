@@ -8,6 +8,7 @@ html {
   height: 100%;
   width: 100%;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 .navbar {
@@ -62,13 +63,12 @@ main .acceuil {
   width: 100%;
 }
 main .acceuil .acceuil-content {
-  background: url(./medias/img/geometricArt.jpg) no-repeat fixed center/cover;
   max-height: 600px;
   max-width: 1200px;
   width: 80%;
   display: grid;
   gap: 5%;
-  grid-template-areas: "gridPres gridIntro gridIntro";
+  grid-template-areas: " gridPres  gridIntro gridIntro gridPhoto";
   position: absolute;
   left: 50%;
   top: 50%;
@@ -80,6 +80,18 @@ main .acceuil .acceuil-content {
     grid-template-areas: "gridPres" "gridIntro";
     grid-gap: 5%;
   }
+}
+main .acceuil .acceuil-content .photo {
+  content: "";
+  grid-area: gridPhoto;
+  background: url(./medias/img/test.jpg) no-repeat center/cover;
+  display: grid;
+  height: 20vh;
+  width: 20vh;
+  position: relative;
+  top: 50%;
+  border-radius: 10vh;
+  transform: translateY(-50%);
 }
 main .acceuil .acceuil-content .presentation {
   grid-area: gridPres;
@@ -112,9 +124,10 @@ main .acceuil .acceuil-content .intro {
   grid-area: gridIntro;
   display: grid;
   text-align: justify;
-  padding: 5% 5% 5% 10%;
-  color: white;
-  mix-blend-mode: difference;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 5% 5% 5% 5%;
 }
 main .acceuil .acceuil-content .intro p {
   grid-area: gridParagrapheIntro;
@@ -124,6 +137,9 @@ main .competences {
   top: 100%;
   height: 100%;
   width: 100%;
+  visibility: hidden;
+  height: 0px;
+  transition: ease 0.5s;
   display: grid;
   grid-template-areas: "skillsArea" "autresArea";
   align-items: center;
@@ -212,6 +228,9 @@ main .portfolio {
   height: 100%;
   width: 100%;
   display: grid;
+  visibility: hidden;
+  height: 0px;
+  transition: ease 0.5s;
 }
 main .portfolio .portfolio-content {
   grid-area: grid-portfolio;
@@ -224,6 +243,9 @@ main .contact {
   height: 100%;
   width: 100%;
   display: grid;
+  visibility: hidden;
+  height: 0px;
+  transition: ease 0.5s;
 }
 main .contact .contact-content {
   grid-area: grid-contact;
@@ -236,28 +258,18 @@ main .contact .contact-content {
   height: 100%;
   width: 100%;
   z-index: 20;
+  visibility: hidden;
+  height: 0px;
+  transition: ease 0.5s;
 }
 #golden-ratio .base {
   position: relative;
-  top: 6vh;
   left: 50%;
   transform: translateX(-50%);
   content: "";
-  height: 85vh;
-  width: calc(85vh * 1.618);
+  height: 90vh;
+  width: calc(90vh * 1.618);
   display: flex;
-}
-#golden-ratio .carreV {
-  transition: ease-in-out 1s;
-}
-#golden-ratio .rectangleV {
-  transition: ease-in-out 2s;
-}
-#golden-ratio .carreH {
-  transition: ease 1s;
-}
-#golden-ratio .rectangleH {
-  transition: ease 1s;
 }
 
 /*# sourceMappingURL=style.css.map */

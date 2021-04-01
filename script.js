@@ -3,7 +3,7 @@
 // ************************************************
 const nav = document.querySelector('nav')
 
-var width = 1
+// var width = 1
 
 // CHECK MOZILLA EVENT LISTENER
 if (window.addEventListener)
@@ -35,6 +35,12 @@ function hideNav(event) {
 
 }
 
+
+const competences = document.querySelector('.competences')
+
+// nav.addEventListener('click', competences){
+// competences.style.visibility = 'visible'
+// }
 
 
 
@@ -97,14 +103,26 @@ function fibonacci() {
     
     var cycle = 0
 
-    function createCarreV(parent) {
+    function createCarreV(parent, color, border) {
         let carreV = document.createElement('div')
         carreV.className = 'carreV fibo'
         carreV.style.width = '100%'
         carreV.style.height = 100 * 0.618 + '%'
-        carreV.style.background = 'rgb(' + (Math.floor(Math.random() * 255)) + ', ' + (Math.floor(Math.random() * 255)) + ', ' + (Math.floor(Math.random() * 255)) + ')'
+        carreV.style.background = color
+        carreV.style.border = border
         carreV.style.content = ''
         parent.appendChild(carreV)
+    }
+    
+    function createCarreH(parent, color, border) {
+        let carreH = document.createElement('div')
+        carreH.className = 'carreH fibo'
+        carreH.style.width = 100 * 0.618 + '%'
+        carreH.style.height = '100%'
+        carreH.style.background = color
+        carreH.style.border = border
+        carreH.style.content = ''
+        parent.appendChild(carreH)
     }
 
     function createRectangleH(parent) {
@@ -132,48 +150,44 @@ function fibonacci() {
         rectangleV.style.flexDirection = "column"
     }
 
-    function createCarreH(parent) {
-        let carreH = document.createElement('div')
-        carreH.className = 'carreH fibo'
-        carreH.style.width = 100 * 0.618 + '%'
-        carreH.style.height = '100%'
-        carreH.style.background = 'rgb(' + (Math.floor(Math.random() * 255)) + ', ' + (Math.floor(Math.random() * 255)) + ', ' + (Math.floor(Math.random() * 255)) + ')'
-        carreH.style.content = ''
-        parent.appendChild(carreH)
-    }
 
-    createCarreH(base)
+
+    createCarreH(base, 'rgb(' + (Math.floor(Math.random() * 255)) + ', ' + (Math.floor(Math.random() * 255)) + ', ' + (Math.floor(Math.random() * 255)) + ')', 'none')
     createRectangleV(base)
 
 
-    while (cycle <2) {
+    while (cycle < 3) {
         cycle++
 
         let rectangleVertical = document.querySelectorAll('.rectangleV')
         let rectangleV = rectangleVertical[rectangleVertical.length - 1]
 
         createRectangleH(rectangleV)
-        createCarreV(rectangleV)
+        createCarreV(rectangleV, 'rgb(' + (Math.floor(Math.random() * 255)) + ', ' + (Math.floor(Math.random() * 255)) + ', ' + (Math.floor(Math.random() * 255)) + ')', 'none')
 
 
         let rectangleHorizontal = document.querySelectorAll('.rectangleH')
         let rectangleH = rectangleHorizontal[rectangleHorizontal.length - 1]
 
         createRectangleV(rectangleH)
-        createCarreH(rectangleH)
+        createCarreH(rectangleH, 'rgb(' + (Math.floor(Math.random() * 255)) + ', ' + (Math.floor(Math.random() * 255)) + ', ' + (Math.floor(Math.random() * 255)) + ')', 'none')
 
 
         rectangleVertical = document.querySelectorAll('.rectangleV')
         rectangleV = rectangleVertical[rectangleVertical.length - 1]
 
 
-        createCarreV(rectangleV)
+        createCarreV(rectangleV, 'rgb(' + (Math.floor(Math.random() * 255)) + ', ' + (Math.floor(Math.random() * 255)) + ', ' + (Math.floor(Math.random() * 255)) + ')', 'none')
         createRectangleH(rectangleV)
 
         rectangleHorizontal = document.querySelectorAll('.rectangleH')
         rectangleH = rectangleHorizontal[rectangleHorizontal.length - 1]
 
-        createCarreH(rectangleH)
+        createCarreH(rectangleH, 'rgb(' + (Math.floor(Math.random() * 255)) + ', ' + (Math.floor(Math.random() * 255)) + ', ' + (Math.floor(Math.random() * 255)) + ')', 'none')
         createRectangleV(rectangleH)
     }
 }
+
+
+// *****************************SUITE**************************
+

@@ -45,52 +45,59 @@ let navLinks = document.querySelectorAll("a")
 
 navLinks.forEach(link => {
     link.addEventListener('click', event => {
-    let sections = document.querySelectorAll('section')
+        let sections = document.querySelectorAll('section')
 
-    // sections.forEach(section => {
-    //     section.style.visibility = 'hidden'
-    // })
-    
+        // sections.forEach(section => {
+        //     section.style.visibility = 'hidden'
+        // })
 
-    if (event.target.hash){
-         target = event.target.hash
-    }else if (event.explicitOriginalTarget.hash){
-         target = event.explicitOriginalTarget.hash
-    }
-    // let page = document.querySelector(target || '#acceuil')
-    // page.style.visibility = 'visible'
-    let main = document.querySelector('main')
-    let page = document.createElement('div')
-    page.id = 'newPage'
-    page.style.height = '100%'
-    page.style.width = '100%'
-    page.style.content = ''
-    page.style.position = 'absolute'
-    page.style.top = '-100vh'
-    page.style.background = 'white'
 
-    let pageContent = document.querySelector(target)
-    if(target == null){
-        pageContent = document.querySelector('#acceuil')
-    }
-    pageContent.style.visibility = 'visible'
-    console.log(pageContent);
-    
-    main.appendChild(page)
-    page.appendChild(pageContent)
-
-    let scroll = -100
-    let timerScroll = setInterval(pageScroll, 1)
-
-    function pageScroll(){
-        scroll = scroll + 2
-        if (scroll == 0){
-            clearInterval(timerScroll)
+        if (event.target.hash && event.target.hash != "#") {
+            target = event.target.hash
+            console.log(event.target.hash);
+        }else if(event.target.hash){
+            target = "#acceuil"
+        } else if (event.explicitOriginalTarget.hash && event.explicitOriginalTarget.attributes.href.nodeValue != "#") {
+            target = event.explicitOriginalTarget.hash
+        }else{
+            target = "#acceuil"
         }
-        page.style.top = scroll + 'vh'
-    }
-    return(page)
-})
+                // let page = document.querySelector(target || '#acceuil')
+        // page.style.visibility = 'visible'
+        let main = document.querySelector('main')
+        let page = document.createElement('div')
+        page.id = 'newPage'
+        page.style.height = '100%'
+        page.style.width = '100%'
+        page.style.content = ''
+        page.style.position = 'absolute'
+        page.style.top = '-100vh'
+        page.style.background = 'white'
+
+        let pageContent
+        console.log(event.explicitOriginalTarget.attributes.href.nodeValue);
+
+    
+        pageContent = document.querySelector(target)
+
+        pageContent.style.visibility = 'visible'
+        console.log(pageContent);
+
+        main.appendChild(page)
+        page.appendChild(pageContent)
+
+        let scroll = -100
+        let timerScroll = setInterval(pageScroll, 1)
+
+        function pageScroll() {
+            scroll = scroll + 2
+            if (scroll == 0) {
+                clearInterval(timerScroll)
+            }
+            page.style.top = scroll + 'vh'
+        }
+        return (page)
+    })
 })
 
 

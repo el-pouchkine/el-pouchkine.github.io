@@ -1,7 +1,8 @@
 // ************************************************
-// ********************HIDENAV********************
+// ********************HIDENAV******************
 // ************************************************
 const nav = document.querySelector('nav')
+
 
 // var width = 1
 
@@ -36,11 +37,63 @@ function hideNav(event) {
 }
 
 
-const competences = document.querySelector('.competences')
+// ****************************************************************
+// ******************************VOLETS************************
+// *************************************************************
 
-// nav.addEventListener('click', competences){
-// competences.style.visibility = 'visible'
-// }
+let navLinks = document.querySelectorAll("a")
+
+navLinks.forEach(link => {
+    link.addEventListener('click', event => {
+    let sections = document.querySelectorAll('section')
+
+    // sections.forEach(section => {
+    //     section.style.visibility = 'hidden'
+    // })
+    
+
+    if (event.target.hash){
+         target = event.target.hash
+    }else if (event.explicitOriginalTarget.hash){
+         target = event.explicitOriginalTarget.hash
+    }
+    // let page = document.querySelector(target || '#acceuil')
+    // page.style.visibility = 'visible'
+    let main = document.querySelector('main')
+    let page = document.createElement('div')
+    page.id = 'newPage'
+    page.style.height = '100%'
+    page.style.width = '100%'
+    page.style.content = ''
+    page.style.position = 'absolute'
+    page.style.top = '-100vh'
+    page.style.background = 'white'
+
+    let pageContent = document.querySelector(target)
+    if(target == null){
+        pageContent = document.querySelector('#acceuil')
+    }
+    pageContent.style.visibility = 'visible'
+    console.log(pageContent);
+    
+    main.appendChild(page)
+    page.appendChild(pageContent)
+
+    let scroll = -100
+    let timerScroll = setInterval(pageScroll, 1)
+
+    function pageScroll(){
+        scroll = scroll + 2
+        if (scroll == 0){
+            clearInterval(timerScroll)
+        }
+        page.style.top = scroll + 'vh'
+    }
+    return(page)
+})
+})
+
+
 
 
 
@@ -97,10 +150,10 @@ setInterval(fibonacci, 5000)
 function fibonacci() {
     const base = document.querySelector('.base')
 
-      while (base.firstChild) {
-            base.removeChild(base.firstChild);
-        }
-    
+    while (base.firstChild) {
+        base.removeChild(base.firstChild);
+    }
+
     var cycle = 0
 
     function createCarreV(parent, color, border) {
@@ -113,7 +166,7 @@ function fibonacci() {
         carreV.style.content = ''
         parent.appendChild(carreV)
     }
-    
+
     function createCarreH(parent, color, border) {
         let carreH = document.createElement('div')
         carreH.className = 'carreH fibo'
@@ -190,4 +243,3 @@ function fibonacci() {
 
 
 // *****************************SUITE**************************
-

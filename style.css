@@ -8,7 +8,6 @@ html {
   height: 100%;
   width: 100%;
   margin: 0;
-  scroll-behavior: smooth;
 }
 
 .navbar {
@@ -16,9 +15,9 @@ html {
   top: 0;
   width: 100%;
   background: #333;
-  transition: 0.8s ease-in-out;
+  transition: ease-in-out;
   height: 5vh;
-  z-index: 1;
+  z-index: 20;
   display: flex;
 }
 .navbar ul {
@@ -56,11 +55,14 @@ html {
 main {
   height: 100%;
   width: 100%;
+  position: absolute;
+  overflow: hidden;
 }
 main .acceuil {
   position: absolute;
   height: 100%;
   width: 100%;
+  transition: ease-in-out;
 }
 main .acceuil .acceuil-content {
   max-height: 600px;
@@ -133,13 +135,11 @@ main .acceuil .acceuil-content .intro p {
   grid-area: gridParagrapheIntro;
 }
 main .competences {
-  position: relative;
-  top: 100%;
+  position: absolute;
   height: 100%;
   width: 100%;
   visibility: hidden;
-  height: 0px;
-  transition: ease 0.5s;
+  transition: ease-in-out;
   display: grid;
   grid-template-areas: "skillsArea" "autresArea";
   align-items: center;
@@ -204,7 +204,6 @@ main .competences .autres {
   max-width: 1200px;
   text-align: justify;
   display: grid;
-  z-index: 20;
   color: white;
   mix-blend-mode: difference;
 }
@@ -223,14 +222,12 @@ main .competences .autres::before {
   }
 }
 main .portfolio {
-  position: relative;
-  top: 100%;
+  position: absolute;
   height: 100%;
   width: 100%;
   display: grid;
   visibility: hidden;
-  height: 0px;
-  transition: ease 0.5s;
+  transition: ease-in-out;
 }
 main .portfolio .portfolio-content {
   grid-area: grid-portfolio;
@@ -238,14 +235,11 @@ main .portfolio .portfolio-content {
   text-align: justify;
 }
 main .contact {
-  position: relative;
-  top: 100%;
   height: 100%;
   width: 100%;
   display: grid;
   visibility: hidden;
-  height: 0px;
-  transition: ease 0.5s;
+  transition: ease-in-out 0.5s;
 }
 main .contact .contact-content {
   grid-area: grid-contact;
@@ -254,13 +248,13 @@ main .contact .contact-content {
 }
 
 #golden-ratio {
+  position: absolute;
   content: "";
   height: 100%;
   width: 100%;
-  z-index: 20;
   visibility: hidden;
   height: 0px;
-  transition: ease 0.5s;
+  transition: ease-in-out;
 }
 #golden-ratio .base {
   position: relative;

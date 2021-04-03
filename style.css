@@ -52,6 +52,15 @@ html {
   }
 }
 
+.volet {
+  height: 100%;
+  width: 100%;
+  content: "";
+  position: absolute;
+  top: -100vh;
+  background: white;
+}
+
 main {
   height: 100%;
   width: 100%;

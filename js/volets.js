@@ -12,7 +12,6 @@ navLinks.forEach(link => {
             }
         })
 
-        console.log('event : ' + event.target);
         // CHECKIN' MOZILLA EVENTS
         if (event.target.hash && event.target.hash != "#") {
             target = event.target.hash

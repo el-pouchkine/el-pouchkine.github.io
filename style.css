@@ -270,11 +270,9 @@ main .portfolio .right div {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  z-index: 10;
 }
 main .portfolio .right div img {
   height: 80vh;
-  z-index: 10;
 }
 main .portfolio .left {
   width: 61.8vw;
@@ -299,36 +297,6 @@ main .portfolio .left div {
 main .portfolio .left div p {
   width: 61.8%;
   text-align: justify;
-}
-main .portfolio .up {
-  width: 30vh;
-  height: 30vh;
-  position: absolute;
-  top: 10vh;
-  left: 61.8vw;
-  z-index: 10;
-  transform: translateX(-50%);
-  display: grid;
-  align-items: center;
-  text-align: center;
-  border-radius: 0 100vh 50vh 100vh;
-  background-color: #333;
-  z-index: 1;
-}
-main .portfolio .down {
-  content: "";
-  width: 30vh;
-  height: 30vh;
-  position: absolute;
-  bottom: 10vh;
-  left: 61.8vw;
-  transform: translateX(-50%);
-  display: grid;
-  align-items: center;
-  text-align: center;
-  border-radius: 50vh 100vh 0 100vh;
-  z-index: 11;
-  background-color: #fff;
 }
 main .contact {
   position: relative;

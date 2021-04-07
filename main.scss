@@ -348,11 +348,9 @@ main {
                 flex-direction: column;
                 justify-content: space-around;
                 align-items: center;
-                z-index: 10;
-
+                
                 img {
                     height: 80vh;
-                    z-index: 10;
                 }
             }
         }
@@ -391,40 +389,40 @@ main {
             }
         }
 
-        .up {
-            width: 30vh;
-            height: 30vh;
-            position:absolute;
-            top: 10vh;
-            left: 100vw * 0.618;
-            z-index: 10;
-            transform: translateX(-50%);
-            display: grid;
-            align-items: center;
-            text-align: center;
-            border-radius: 0 100vh 50vh 100vh;
-            background-color: #333;
-            z-index: 1;
+        // .up {
+        //     width: 30vh;
+        //     height: 30vh;
+        //     position:absolute;
+        //     top: 10vh;
+        //     left: 100vw * 0.618;
+        //     z-index: 10;
+        //     transform: translateX(-50%);
+        //     display: grid;
+        //     align-items: center;
+        //     text-align: center;
+        //     border-radius: 0 100vh 50vh 100vh;
+        //     background-color: #333;
+        //     z-index: 1;
 
 
-        }
+        // }
 
-        .down {
-            content: '';
-            width: 30vh;
-            height: 30vh;
-            position:absolute;
-            bottom: 10vh;
-            left: 100vw * 0.618;
-            transform: translateX(-50%);
-            display: grid;
-            align-items: center;
-            text-align: center;
-            border-radius: 50vh 100vh 0 100vh;
-            z-index: 11;
-            background-color: #fff;
+        // .down {
+        //     content: '';
+        //     width: 30vh;
+        //     height: 30vh;
+        //     position:absolute;
+        //     bottom: 10vh;
+        //     left: 100vw * 0.618;
+        //     transform: translateX(-50%);
+        //     display: grid;
+        //     align-items: center;
+        //     text-align: center;
+        //     border-radius: 50vh 100vh 0 100vh;
+        //     z-index: 11;
+        //     background-color: #fff;
 
-        }
+        // }
 
     }
 

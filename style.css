@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500&display=swap");
 * {
   margin: 0;
   padding: 0;
+  font-family: "Source Code Pro", monospace;
 }
 
 body,
@@ -15,7 +17,7 @@ html {
   top: 0;
   width: 100%;
   background: #333;
-  transition: ease-in-out;
+  transition: ease 0.5s;
   height: 5vh;
   z-index: 20;
   display: flex;
@@ -24,7 +26,7 @@ html {
   grid-area: gridNav;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   list-style-type: none;
   align-items: center;
 }
@@ -232,28 +234,131 @@ main .competences .autres::before {
 }
 main .portfolio {
   position: absolute;
-  height: 100%;
   width: 100%;
-  display: grid;
+  height: 100%;
+  display: flex;
   visibility: hidden;
   transition: ease-in-out;
+  overflow: hidden;
 }
-main .portfolio .portfolio-content {
-  grid-area: grid-portfolio;
-  padding: 0 5vh 0 5vh;
+main .portfolio div {
+  position: relative;
+  text-align: justify;
+  height: 100%;
+  display: flex;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow: scroll;
+}
+main .portfolio .right {
+  background: #333;
+  right: 0;
+  width: 38.2vw;
+  flex-direction: column;
+  justify-content: start;
+}
+main .portfolio .right::-webkit-scrollbar {
+  display: none;
+}
+main .portfolio .right div {
+  flex-shrink: 0;
+  position: relative;
+  height: 100%;
+  right: -50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 10;
+}
+main .portfolio .right div img {
+  height: 80vh;
+  z-index: 10;
+}
+main .portfolio .left {
+  width: 61.8vw;
+  background: #fff;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+main .portfolio .left::-webkit-scrollbar {
+  display: none;
+}
+main .portfolio .left div {
+  height: 100%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+main .portfolio .left div p {
+  width: 61.8%;
   text-align: justify;
 }
+main .portfolio .up {
+  width: 30vh;
+  height: 30vh;
+  position: absolute;
+  top: 10vh;
+  left: 61.8vw;
+  z-index: 10;
+  transform: translateX(-50%);
+  display: grid;
+  align-items: center;
+  text-align: center;
+  border-radius: 0 100vh 50vh 100vh;
+  background-color: #333;
+  z-index: 1;
+}
+main .portfolio .down {
+  content: "";
+  width: 30vh;
+  height: 30vh;
+  position: absolute;
+  bottom: 10vh;
+  left: 61.8vw;
+  transform: translateX(-50%);
+  display: grid;
+  align-items: center;
+  text-align: center;
+  border-radius: 50vh 100vh 0 100vh;
+  z-index: 11;
+  background-color: #fff;
+}
 main .contact {
+  position: relative;
   height: 100%;
   width: 100%;
   display: grid;
   visibility: hidden;
   transition: ease-in-out 0.5s;
 }
-main .contact .contact-content {
-  grid-area: grid-contact;
-  padding: 5vh;
-  text-align: justify;
+main .contact .playground {
+  height: 70%;
+  width: 70%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border: black 1px solid;
+  content: "";
+  background: #fff;
+  cursor: none;
+}
+main .contact .playground #plateforme {
+  height: 2%;
+  width: 5%;
+  background: black;
+  position: relative;
+  top: 97%;
+  left: 50%;
+  transform: translateY(-50%);
+  content: "";
 }
 
 #golden-ratio {

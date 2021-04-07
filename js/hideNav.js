@@ -1,3 +1,4 @@
+
 const nav = document.querySelector('nav')
 
 
@@ -27,6 +28,7 @@ function hideNav(event) {
             nav.style.top = "-5vh"
         } else {
             nav.style.top = "0"
+            nav.style.position="fixed"
         }
 
     }

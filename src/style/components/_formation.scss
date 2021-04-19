@@ -1,0 +1,31 @@
+.formation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    text-transform: uppercase;
+
+    h2 {
+      grid-area: a;
+      text-align: left;
+    }
+
+    .intitule {
+      grid-area: b;
+      text-align: right;
+    }
+  }
+  .etablissement {
+    margin-top: 2vh;
+    text-align: left;
+  }
+  .description {
+    margin-top: 2vh;
+    text-align: justify;
+  }
+}

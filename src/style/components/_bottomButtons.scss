@@ -1,0 +1,32 @@
+.bottom-buttons {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -130%);
+
+    font-size: 3vh;
+
+    .bottom-buttons-main {
+        width: 30vw;
+        display: grid;
+        grid-template-areas: 'a b c';
+        grid-template-columns: 20% 60% 20%;
+        justify-content: space-between;
+        align-items: center;
+        justify-items: center;
+
+        .left{
+            grid-area: a;
+            color: $blue-green;
+        }
+        
+        .right{
+            grid-area: c;
+            color: $blue-green;
+        }
+
+        .center{
+            grid-area: b;
+        }
+    }
+}

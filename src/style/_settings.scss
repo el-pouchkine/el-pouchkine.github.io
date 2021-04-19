@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+$aicru: #f2f7f2;
+$bleu-deep: #142f40;
+$rouge-elegant: #a6445d;
+
+$blue-green: #1a535cff;
+$turquoise: #4ecdc4ff;
+// $cream: #f7fff7ff;
+$cream: #d9d9d9;
+$red-sweet: #ff6b6bff;
+$yellow: #fc9e4f;
+
+
+@mixin bottom-right-shadow {
+  box-shadow: $yellow 8px 8px, $red-sweet 16px 16px, $turquoise 24px 24px;
+  transform: translate(-24px, -24px);
+}
+@mixin bottom-left-shadow {
+  box-shadow: $yellow -8px 8px, $red-sweet -16px 16px, $turquoise -24px 24px;
+  transform: translate(24px, -24px);
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", serif;
+  font-weight: 300;
+  text-decoration: none;
+  list-style: none;
+}
+
+html,
+body {
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  background: $bleu-deep;
+  overflow: hidden;
+
+  .jesse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $cream;
+    font-size: 10vh;
+    text-transform: uppercase;
+  }
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  color: $blue-green;
+}
+
+#root,
+.App {
+  height: 100%;
+}

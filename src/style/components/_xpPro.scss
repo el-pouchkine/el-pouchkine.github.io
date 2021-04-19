@@ -1,0 +1,33 @@
+.xp {
+  display: flex;
+  justify-content: space-around;
+
+  .head {
+    grid-area: a;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-areas: "a b c";
+    align-items: center;
+    justify-items: center;
+    text-transform: uppercase;
+
+    .startDate {
+      grid-area: a;
+      text-align: right;
+    }
+    .endDate {
+      text-align: left;
+      grid-area: c;
+    }
+    .poste {
+      text-align: center;
+    }
+  }
+  .entreprise {
+    margin-top: 2vh;
+  }
+  .description {
+    margin-top: 2vh;
+    text-align: justify;
+  }
+}
